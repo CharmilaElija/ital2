@@ -9,10 +9,10 @@
 *{margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
 body{background:#fffaf5; color:#333; overflow-x:hidden;}
 .capa{position:relative; height:100vh; display:flex; align-items:center; justify-content:center; overflow:hidden;}
-.capa-foto{position:absolute; top:0; left:0; width:100%; height:100%; background-image:url('IMG_0047.png'); background-size:cover; background-position:center;}
+.capa-foto{position:absolute; top:0; left:0; width:100%; height:100%; background-image:url('IMG_0047.jpeg'); background-size:cover; background-position:center;}
 .capa-overlay{position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.65));}
 .capa-conteudo{position:relative; z-index:2; text-align:center; color:white;}
-.capa-conteudo .subtitulo{letter-spacing:4px; font-size:14px; margin-bottom:10px;}
+.capa-conteudo .subtitulo{letter-spacing:3px; font-size:13px; margin-bottom:10px;}
 .capa-conteudo .nomes{font-family:'Great Vibes', cursive; font-size:62px; line-height:1.1; margin:10px 0;}
 .capa-conteudo .data{font-size:18px; margin:10px 0 25px; letter-spacing:2px;}
 .btn-ver{background:white; color:#9B1B4A; border:none; padding:14px 32px; border-radius:30px; font-weight:600; font-size:15px; cursor:pointer;}
@@ -43,7 +43,7 @@ body{background:#fffaf5; color:#333; overflow-x:hidden;}
 </head>
 <body>
 
-<!-- 1. IMG_0047.png - capa -->
+<!-- 1. IMG_0047.jpeg - capa com foto de fundo e nome por cima -->
 <section class="capa">
   <div class="capa-foto"></div>
   <div class="capa-overlay"></div>
@@ -55,21 +55,20 @@ body{background:#fffaf5; color:#333; overflow-x:hidden;}
   </div>
 </section>
 
-<!-- 2. IMG_0047.png - Os Noivos -->
+<!-- 2. IMG_0047.jpeg - Os Noivos -->
 <section class="secao">
   <h2 class="animar">Os Noivos</h2>
   <div class="foto-circular animar">
-    <img src="IMG_0047.png" alt="Helena & Davi">
+    <img src="IMG_0047.jpeg" alt="Helena & Davi">
   </div>
-  <p class="animar"><strong>Helena</strong> - Convidam para o seu casamento</p>
-  <p class="animar"><strong>Davi</strong> - Com a bênção de Deus e de seus pais</p>
+  <p class="animar"><strong>Helena & Davi</strong> - Convidam para o seu casamento</p>
 </section>
 
-<!-- 3. IMG_0049.png - Amigos e Família + contagem -->
+<!-- 3. IMG_0049.jpeg - Amigos e Família + contagem regressiva -->
 <section class="secao">
   <h2 class="animar">Contagem Regressiva</h2>
   <p class="animar">Falta pouco para o nosso grande dia!</p>
-  <img src="IMG_0049.png" alt="Helena & Davi" class="foto-contagem animar">
+  <img src="IMG_0049.jpeg" alt="Amigos e Família" class="foto-contagem animar">
   <div class="contador animar" id="contador">
     <div><span id="dias">00</span>Dias</div>
     <div><span id="horas">06</span>Horas</div>
@@ -84,20 +83,20 @@ body{background:#fffaf5; color:#333; overflow-x:hidden;}
   </div>
 </section>
 
-<!-- 4. GALERIA 4 FOTOS -->
+<!-- 4. IMG_0047.jpeg + IMG_0049.jpeg + IMG_0050.jpeg + IMG_0051.jpeg - galeria final (4 fotos) -->
 <section class="galeria">
   <h2 class="animar">Nosso Amor</h2>
   <div class="grid-galeria">
-    <img src="IMG_0047.png" alt="Galeria 1" class="animar">
-    <img src="IMG_0049.png" alt="Galeria 2" class="animar">
-    <img src="IMG_0050.png" alt="Galeria 3" class="animar">
-    <img src="IMG_0051.png" alt="Galeria 4" class="animar">
+    <img src="IMG_0047.jpeg" alt="Galeria 1" class="animar">
+    <img src="IMG_0049.jpeg" alt="Galeria 2" class="animar">
+    <img src="IMG_0050.jpeg" alt="Galeria 3" class="animar">
+    <img src="IMG_0051.jpeg" alt="Galeria 4" class="animar">
   </div>
 </section>
 
-<!-- 5. IMG_0051.png - foto final -->
+<!-- 5. IMG_0051.jpeg - foto final de abraço -->
 <section class="final">
-  <img src="IMG_0051.png" alt="Foto final abraço" class="foto-final animar">
+  <img src="IMG_0051.jpeg" alt="Foto final abraço" class="foto-final animar">
   <p class="animar"><strong>Helena & Davi</strong></p>
   <p class="animar">Estamos ansiosos para recebê-lo no dia do nosso casamento - 15 DEZ 2027</p>
 </section>
@@ -111,7 +110,6 @@ const observador = new IntersectionObserver((entradas) => {
 }, { threshold: 0.15 });
 elementos.forEach(el => observador.observe(el));
 
-// Contador até 15 DEZ 2027 17:30
 const dataFinal = new Date('2027-12-15T17:30:00').getTime();
 setInterval(()=>{
   const agora = new Date().getTime();
