@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helena & Davi - 15.12.2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
+body{background:#fffaf5; color:#333; overflow-x:hidden;}
+.capa{position:relative; height:100vh; display:flex; align-items:center; justify-content:center; overflow:hidden;}
+.capa-foto{position:absolute; top:0; left:0; width:100%; height:100%; background-image:url('IMG_0047.png'); background-size:cover; background-position:center;}
+.capa-overlay{position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.65));}
+.capa-conteudo{position:relative; z-index:2; text-align:center; color:white;}
+.capa-conteudo .subtitulo{letter-spacing:4px; font-size:14px; margin-bottom:10px;}
+.capa-conteudo .nomes{font-family:'Great Vibes', cursive; font-size:62px; line-height:1.1; margin:10px 0;}
+.capa-conteudo .data{font-size:18px; margin:10px 0 25px; letter-spacing:2px;}
+.btn-ver{background:white; color:#9B1B4A; border:none; padding:14px 32px; border-radius:30px; font-weight:600; font-size:15px; cursor:pointer;}
+.secao{padding:50px 20px; text-align:center; max-width:500px; margin:0 auto;}
+.secao h2{font-family:'Great Vibes', cursive; font-size:42px; color:#9B1B4A; margin-bottom:15px;}
+.secao p{font-size:15px; line-height:1.6; color:#555; margin:8px 0;}
+.foto-circular img{width:160px; height:160px; border-radius:50%; object-fit:cover; border:5px solid #fff; box-shadow:0 10px 25px rgba(0,0,0,0.15);}
+.foto-contagem{width:100%; height:300px; object-fit:cover; border-radius:20px; margin:20px 0;}
+.contador{background:#9B1B4A; color:white; padding:18px; border-radius:15px; display:flex; justify-content:space-around; font-size:14px; font-weight:600; margin-top:15px;}
+.contador span{display:block; font-size:22px; font-weight:700;}
+.galeria{padding:40px 20px; max-width:500px; margin:0 auto; text-align:center;}
+.grid-galeria{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:20px;}
+.grid-galeria img{width:100%; height:180px; object-fit:cover; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+.final{text-align:center; padding:40px 20px;}
+.foto-final{width:100%; max-width:500px; height:400px; object-fit:cover; border-radius:20px; margin-bottom:20px;}
+.botoes-interativos{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:30px 0;}
+.botoes-interativos a{background:#2AB7C0; color:white; padding:12px 20px; border-radius:25px; text-decoration:none; font-size:14px; font-weight:600;}
+.botoes-interativos a.amarelo{background:#F9A91E; color:#5a1a2a;}
+.animar{opacity:0; transform:translateY(40px);}
+.animar.ativo{animation:saltar 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;}
+@keyframes saltar{
+  0%{opacity:0; transform:translateY(60px) scale(0.9);}
+  60%{opacity:1; transform:translateY(-10px) scale(1.05);}
+  80%{transform:translateY(5px) scale(0.98);}
+  100%{opacity:1; transform:translateY(0) scale(1);}
+}
+</style>
+</head>
+<body>
+
+<!-- 1. IMG_0047.png - capa -->
+<section class="capa">
+  <div class="capa-foto"></div>
+  <div class="capa-overlay"></div>
+  <div class="capa-conteudo animar">
+    <p class="subtitulo">COM A BÊNÇÃO DE DEUS E DE SEUS PAIS</p>
+    <h1 class="nomes">Helena & Davi</h1>
+    <p class="data">15 • DEZ • 2027 - SÁBADO • 17:30H</p>
+    <button class="btn-ver" onclick="document.querySelectorAll('.secao')[0].scrollIntoView({behavior:'smooth'})">VER CONVITE</button>
+  </div>
+</section>
+
+<!-- 2. IMG_0047.png - Os Noivos -->
+<section class="secao">
+  <h2 class="animar">Os Noivos</h2>
+  <div class="foto-circular animar">
+    <img src="IMG_0047.png" alt="Helena & Davi">
+  </div>
+  <p class="animar"><strong>Helena</strong> - Convidam para o seu casamento</p>
+  <p class="animar"><strong>Davi</strong> - Com a bênção de Deus e de seus pais</p>
+</section>
+
+<!-- 3. IMG_0049.png - Amigos e Família + contagem -->
+<section class="secao">
+  <h2 class="animar">Contagem Regressiva</h2>
+  <p class="animar">Falta pouco para o nosso grande dia!</p>
+  <img src="IMG_0049.png" alt="Helena & Davi" class="foto-contagem animar">
+  <div class="contador animar" id="contador">
+    <div><span id="dias">00</span>Dias</div>
+    <div><span id="horas">06</span>Horas</div>
+    <div><span id="min">55</span>Min</div>
+    <div><span id="seg">41</span>Seg</div>
+  </div>
+  <div class="botoes-interativos animar">
+    <a href="#">CONFIRMAR PRESENÇA</a>
+    <a href="#" class="amarelo">LOCAL</a>
+    <a href="#">PRESENTES</a>
+    <a href="#" class="amarelo">FOTOS</a>
+  </div>
+</section>
+
+<!-- 4. GALERIA 4 FOTOS -->
+<section class="galeria">
+  <h2 class="animar">Nosso Amor</h2>
+  <div class="grid-galeria">
+    <img src="IMG_0047.png" alt="Galeria 1" class="animar">
+    <img src="IMG_0049.png" alt="Galeria 2" class="animar">
+    <img src="IMG_0050.png" alt="Galeria 3" class="animar">
+    <img src="IMG_0051.png" alt="Galeria 4" class="animar">
+  </div>
+</section>
+
+<!-- 5. IMG_0051.png - foto final -->
+<section class="final">
+  <img src="IMG_0051.png" alt="Foto final abraço" class="foto-final animar">
+  <p class="animar"><strong>Helena & Davi</strong></p>
+  <p class="animar">Estamos ansiosos para recebê-lo no dia do nosso casamento - 15 DEZ 2027</p>
+</section>
+
+<script>
+const elementos = document.querySelectorAll('.animar');
+const observador = new IntersectionObserver((entradas) => {
+  entradas.forEach((entrada) => {
+    if(entrada.isIntersecting){ entrada.target.classList.add('ativo'); }
+  });
+}, { threshold: 0.15 });
+elementos.forEach(el => observador.observe(el));
+
+// Contador até 15 DEZ 2027 17:30
+const dataFinal = new Date('2027-12-15T17:30:00').getTime();
+setInterval(()=>{
+  const agora = new Date().getTime();
+  const diff = dataFinal - agora;
+  if(diff > 0){
+    document.getElementById('dias').innerText = Math.floor(diff/(1000*60*60*24));
+    document.getElementById('horas').innerText = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+    document.getElementById('min').innerText = Math.floor((diff%(1000*60*60))/(1000*60));
+    document.getElementById('seg').innerText = Math.floor((diff%(1000*60))/1000);
+  }
+},1000);
+</script>
+
+</body>
+</html>
